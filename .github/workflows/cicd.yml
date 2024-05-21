@@ -18,7 +18,7 @@ jobs:
       - name: Build Docker Image
         run: docker build -t shakilpro/youtubecicd-frontend --build-arg REACT_APP_NODE_ENV='production' --build-arg REACT_APP_SERVER_BASE_URL='${{ secrets.REACT_APP_SERVER_BASE_URL }}'  .
       
-      - name: Publish Image to Docker Hub
+      - name: Publish Image to Docker Hub lets try
         run: docker push shakilpro/youtubecicd-frontend:latest
 
   deploy:
