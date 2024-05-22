@@ -78,7 +78,10 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Login to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        docker push shakilpro/youtubenode-frontend:latest
+
 
     - name: Pull Image from Docker Hub try
       run: docker pull shakilpro/youtubenode-frontend:latest
