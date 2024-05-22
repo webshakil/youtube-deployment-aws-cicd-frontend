@@ -53,7 +53,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Docker Image
+      - name: Build Docker Image 4000
         #run: docker build -t shakilpro/youtubenode-frontend:latest .
         run: docker build -t shakilpro/youtubenode-frontend --build-arg REACT_APP_NODE_ENV='production' --build-arg REACT_APP_SERVER_BASE_URL='${{ secrets.REACT_APP_SERVER_BASE_URL }}'  .
 
