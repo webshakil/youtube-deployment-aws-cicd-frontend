@@ -54,7 +54,8 @@ jobs:
         run: npm ci
 
       - name: Build Docker Image
-        run: docker build -t shakilpro/youtubenode-frontend:latest .
+        #run: docker build -t shakilpro/youtubenode-frontend:latest .
+        run: docker build -t shakilpro/youtubenode-frontend --build-arg REACT_APP_NODE_ENV='production' --build-arg REACT_APP_SERVER_BASE_URL='${{ secrets.REACT_APP_SERVER_BASE_URL }}'  .
 
       - name: Push Docker Image to Docker Hub
         run: |
