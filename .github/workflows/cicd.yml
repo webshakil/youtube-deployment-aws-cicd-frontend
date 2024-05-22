@@ -80,7 +80,7 @@ jobs:
     - name: Login to Docker Hub
       run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-    - name: Pull Image from Docker Hub
+    - name: Pull Image from Docker Hub try
       run: docker pull shakilpro/youtubenode-frontend:latest
 
     - name: Stop and remove existing container (if exists)
